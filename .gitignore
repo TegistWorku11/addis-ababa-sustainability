@@ -221,3 +221,31 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# ==========================================
+# ADDIS ABABA SUSTAINABILITY PROJECT
+# ==========================================
+
+# Exclude original research datasets
+/Data/*
+
+# Allow data documentation and approved public exports
+!/Data/README.md
+!/Data/public/
+!/Data/public/**
+
+# Ignore large geospatial files anywhere in the project
+*.tif
+*.tiff
+*.shp
+*.shx
+*.dbf
+
+# Ignore temporary and backup files
+*.tmp
+*.bak
+
+# Windows system files
+Thumbs.db
+Desktop.ini
