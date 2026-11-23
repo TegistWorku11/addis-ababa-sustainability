@@ -1,0 +1,30 @@
+/* CSS styles how the HTML elements appear. */
+:root { --navy:#212b58; --green:#157963; --cream:#f5f7f5; --text:#344653; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family: Arial, Helvetica, sans-serif; color:var(--text); line-height:1.65; }
+a { color:inherit; }
+.site-header { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px max(6%, calc((100vw - 1100px)/2)); background:white; }
+.brand { text-decoration:none; font-weight:800; color:var(--navy); }
+.brand span { font-weight:400; color:var(--green); }
+nav { display:flex; flex-wrap:wrap; gap:20px; }
+nav a { text-decoration:none; font-size:0.9rem; }
+nav a:hover { color:var(--green); }
+.hero { padding:100px max(6%, calc((100vw - 1100px)/2)) 75px; background:var(--navy); color:white; }
+.eyebrow { font-size:0.78rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:var(--green); }
+.hero .eyebrow { color:#81ddc4; }
+h1,h2 { line-height:1.16; letter-spacing:-0.035em; color:var(--navy); }
+h1 { max-width:820px; font-size:clamp(2.5rem, 6vw, 4.7rem); color:white; margin:20px 0; }
+h2 { max-width:760px; font-size:clamp(1.8rem, 4vw, 2.8rem); }
+.hero-description { max-width:690px; font-size:1.16rem; color:#d4e1e7; }
+.button { display:inline-block; margin-top:20px; padding:12px 22px; background:#89e2c4; color:#112638; text-decoration:none; border-radius:5px; font-weight:700; }
+.stats { display:flex; flex-wrap:wrap; gap:55px; margin-top:70px; padding-top:25px; border-top:1px solid #49606c; }
+.stats div { display:flex; flex-direction:column; }
+.stats strong { font-size:1.8rem; color:white; }
+.stats span { color:#d4e1e7; font-size:0.86rem; }
+.content-section { padding:80px max(6%, calc((100vw - 1100px)/2)); }
+.content-section > p:not(.eyebrow) { max-width:760px; font-size:1.1rem; }
+.muted { background:var(--cream); }
+.placeholder { margin-top:30px; border:2px dashed #a8bcb6; border-radius:8px; padding:65px 20px; text-align:center; color:#607b73; background:#f9fbfa; }
+footer { padding:28px 6%; text-align:center; background:var(--navy); color:#d4e1e7; font-size:0.85rem; }
+@media (max-width:700px) { .site-header { align-items:flex-start; flex-direction:column; } nav { gap:12px; } .hero { padding-top:65px; } .stats { gap:25px; } .content-section { padding-top:55px; padding-bottom:55px; } }
