@@ -7,6 +7,12 @@
   <title>Addis Ababa Sustainability | Analytics Case Study</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <!-- Leaflet stylesheet -->
+  <link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <!-- Leaflet JavaScript library -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -48,7 +54,8 @@
       <p class="eyebrow">03 · THE INSIGHTS</p>
       <h2>Make patterns visible—and explain why they matter.</h2>
       <p>The analysis reveals meaningful differences across districts and relationships among development pressure and vegetation. An interactive map and research charts will be added here in the next lessons.</p>
-      <div class="placeholder" role="note">Interactive map coming in Lesson 4</div>
+      <!--<div class="placeholder" role="note">Interactive map coming in Lesson 4</div>-->
+      <div id="risk-map"></div>
     </section>
 
     <section id="recommendations" class="content-section muted">
