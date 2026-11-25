@@ -46,7 +46,7 @@ fetch("assets/data/addis_ababa_woreda_public.geojson")
                 fillColor: getRiskColor(
                     feature.properties.risk_score
                 ),
-                fillOpacity: 0.4
+                fillOpacity: 0.75
                 };
             }
         }).addTo(riskMap);
