@@ -14,3 +14,34 @@ L.tileLayer(
         attribution: "&copy; OpenStreetMap contributors"
     }
 ).addTo(riskMap);
+
+// Load woreda boundary data
+fetch("assets/data/addis_ababa_woreda_public.geojson")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Unable to load GeoJSON");
+        }
+        return response.json();
+    })
+    .then(data => {
+
+        // Inspect the data in the browser console
+        console.log(data);
+
+        // Create the geographic overlay
+        const woredaLayer = L.geoJSON(data, {
+            style: {
+                color: "#2563eb",
+                weight: 1,
+                fillColor: "#60a5fa",
+                fillOpacity: 0.4
+            }
+        }).addTo(riskMap);
+
+        // Adjust the map to fit all woreda boundaries
+        riskMap.fitBounds(woredaLayer.getBounds());
+
+    })
+    .catch(error => {
+        console.error("Map data error:", error);
+    });
