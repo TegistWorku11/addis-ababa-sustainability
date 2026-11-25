@@ -15,6 +15,15 @@ L.tileLayer(
     }
 ).addTo(riskMap);
 
+// Assign colors based on sustainability risk
+function getRiskColor(score) {
+    if (score >= 0.8) return "#b91c1c";
+    if (score >= 0.6) return "#ef4444";
+    if (score >= 0.4) return "#f59e0b";
+    if (score >= 0.2) return "#84cc16";
+    return "#15803d";
+}
+
 // Load woreda boundary data
 fetch("assets/data/addis_ababa_woreda_public.geojson")
     .then(response => {
@@ -30,10 +39,13 @@ fetch("assets/data/addis_ababa_woreda_public.geojson")
 
         // Create the geographic overlay
         const woredaLayer = L.geoJSON(data, {
-            style: {
-                color: "#2563eb",
+            style: function(feature) {
+                return {
+                color: "#ffffff",
                 weight: 1,
-                fillColor: "#60a5fa",
+                fillColor: getRiskColor(
+                    feature.properties.risk_score
+                ),
                 fillOpacity: 0.4
             }
         }).addTo(riskMap);
