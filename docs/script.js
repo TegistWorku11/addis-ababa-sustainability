@@ -47,6 +47,7 @@ fetch("assets/data/addis_ababa_woreda_public.geojson")
                     feature.properties.risk_score
                 ),
                 fillOpacity: 0.4
+                };
             }
         }).addTo(riskMap);
 
